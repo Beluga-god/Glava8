@@ -6,7 +6,9 @@ import java.util.Scanner;
 
 public class TaskA {
     public static String insertSubstring(String original, int position, String toInsert) {
-        return original.substring(0, position) + toInsert + original.substring(position);
+        StringBuilder sb = new StringBuilder(original);
+        sb.insert(position, toInsert);  // Вставляем подстроку на нужную позицию
+        return sb.toString();
     }
 
     public static String readTextFromFile(String filePath) throws FileNotFoundException {
@@ -26,7 +28,7 @@ public class TaskA {
 
             System.out.print("Введите индекс k: ");
             int k = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine();  // Ожидаем ввод строки после числа
             System.out.print("Введите подстроку для вставки: ");
             String substring = scanner.nextLine();
 
@@ -40,4 +42,3 @@ public class TaskA {
         }
     }
 }
-
